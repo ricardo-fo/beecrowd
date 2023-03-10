@@ -7,7 +7,7 @@ int main () {
 
     while(scanf("%s", str) != EOF) {
         for (int i = 0; i < strlen(str); i++) {
-            if (str[i] != '\n' && str[i] != '(' && str[i] != ')') continue;
+            if (strchr("()\n", str[i]) == NULL) continue;
 
             if ((stack += str[i] == '(' ? 1 : -1) < 0) break;
         }
